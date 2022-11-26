@@ -349,9 +349,20 @@ def process_and_write(ds,
 # Event statistics
 # ============================================================================
 
-def calculate_event_statistics(da, dataset):
+def calculate_event_statistics(da, dataset, absolute_threshold='False', threshold_value='std'):
     """
     Calculate the proportion and area of a subregion that experiences an event
+    
+    absolute_threshold is a boolean indicating whether or not to use an absolute
+    value as the proportion of land area that triggers an event.
+    
+    threshold_value is the proportion of land area required to trigger
+    a regional event. If absolute_threshold == True, threshold_value is added to
+     the mean areal proportion experiencing an event each year. 
+     Default is 'std', corresponding to one standard deviation
+    above the mean. Otherwise this should be a float between 0 and 1.
+    If absolute_threshold == True, threshold_value is simply the proportion of area
+    that triggers an event.
     """
     
     mask = get_combined_mask(dataset)
@@ -371,7 +382,13 @@ def calculate_event_statistics(da, dataset):
         country_proportion_of_event = area_of_event / area_of_country.values
         
         # Get threshold of anomlously widespread events
-        proportion_thresh = country_proportion_of_event.mean('time') + country_proportion_of_event.std('time')
+        if absolute_threshold:
+            proportion_thresh = threshold_value
+        else:
+            if threshold_value == 'std':
+                proportion_thresh = country_proportion_of_event.mean('time') + country_proportion_of_event.std('time')
+            else:
+                proportion_thresh = country_proportion_of_event.mean('time') + threshold_value
         country_event = xr.where(country_proportion_of_event > proportion_thresh, True, False)
         
         # Combine into DataSet
