@@ -349,7 +349,7 @@ def process_and_write(ds,
 # Event statistics
 # ============================================================================
 
-def calculate_event_statistics(da, dataset, absolute_threshold='False', threshold_value='std'):
+def calculate_event_statistics(da, dataset, absolute_threshold=False, threshold_value='std'):
     """
     Calculate the proportion and area of a subregion that experiences an event
     
