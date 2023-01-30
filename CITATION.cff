@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "RICHARDSON"
+  given-names: "DOUG"
+  orcid: "https://orcid.org/0000-0001-5397-0201"
+title: "Codes for Richardson et al. 2023, PLOS Climate"
+version: 1.0.0
+doi: tbc
+date-released: 2023-01-30
+url: "https://github.com/dougrichardson/Richardson_2022_coffee"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Richardson"
+    given-names: "Doug"
+    orcid: "https://orcid.org/0000-0001-5397-0201"
+  - family-names: "Kath"                                
+    given-names: "Jarrod"
+  - family-names: "Byrareddy"                                
+    given-names: "Vivekananda M."
+  - family-names: "Monselesan"  
+    given-names: "Didier P."
+  - family-names: "Risbey"                                
+    given-names: "James S."
+  - family-names: "Squire"
+    given-names: "Dougal T."
+  - family-names: "Tozer"                                
+    given-names: "Carly R." 
+  journal: "PLOS Climate"
+  title: "Synchronous climate hazards pose an increasing challenge to global coffee production"
+  year: 2023
