@@ -6,7 +6,7 @@ authors:
   orcid: "https://orcid.org/0000-0001-5397-0201"
 title: "Codes for Richardson et al. 2023, PLOS Climate"
 version: 1.0.0
-doi: tbc
+doi: 10.5281/zenodo.7582943
 date-released: 2023-01-30
 url: "https://github.com/dougrichardson/Richardson_2022_coffee"
 preferred-citation:
